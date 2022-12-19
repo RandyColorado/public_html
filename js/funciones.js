@@ -146,7 +146,7 @@ window.onscroll = function() {
     let boxClip = document.getElementsByClassName('iconStar')
 
     let y = window.scrollY;
-    console.log(y);
+    //console.log(y);
     if(pantalla > 1000 && y>1250)
     {
         boxClip[0].style.animation = 'giro 1s backwards'
