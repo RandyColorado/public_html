@@ -29,19 +29,34 @@
   background-color: rgba(209, 156, 116, 0.905);
   border-radius: 2rem 2rem 0rem 0rem;
 }
-
+.fotoPersonal{
+  background-image: url('../img/picture.jpg');
+  background-position: center;
+  background-size: 70%;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  background-color: rgb(223, 221, 221);
+  overflow: hidden;
+}
+.fotoPersonal::after{
+  content: "";
+  background-color: rgba(223, 221, 221, 0.418);
+  top:0;
+  left: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 .slider {
   position: absolute;
-  width: 45%;
+  width: 48%;
   height: 90%;
   top: 10%;
-  left: 2.5%;
   background-color: rgba(234, 202, 186, 0.608);
-  border-radius: 1rem;
   display: flex;
   flex-direction: row;
   background-image: url("../img/slider/1.jpg");
-  border-radius: 1rem;
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -55,8 +70,6 @@
   height: 100%;
   background-color: white;
   display: flex;
-  border-radius: 1rem;
-  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
@@ -64,21 +77,26 @@
 
 .img1 {
   background-image: url("../img/slider/1.jpg");
+  object-fit: contain;
 }
 
 .img2 {
   background-image: url("../img/slider/2.jpg");
+  object-fit: contain;
 }
 
 .img3 {
+  object-fit: contain;
   background-image: url("../img/slider/3.jpg");
 }
 
 .img4 {
+  object-fit: contain;
   background-image: url("../img/slider/4.jpg");
 }
 
 .img5 {
+  object-fit: contain;
   background-image: url("../img/slider/5.jpg");
 }
 
@@ -167,10 +185,98 @@
 .contenedor2 {
   margin-top: 20px;
   background: rgb(170, 90, 68);
-  height: 800px;
+  height: 600px;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
-
+.contenedores{
+  display: flex;
+  width: 45%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.nombre-descripcion{
+  width: 10%;
+  background-color: white;
+}
+.--contenedor1{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.cabecera{  
+  width: 80%;
+  height: 30%;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+}
+cite > span{
+  font-weight: bold;
+  font-size: 25px;
+  margin:0;
+  color: brown;
+}
+.cabecera > p{
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+@keyframes movement {
+  0%{background-position: bottom left;}
+  25%{background-position: top center;}
+  50%{background-position: bottom right;}
+  75%{background-position: top right;}
+  100%{background-position: center center;}
+}
+.profileImg{
+  width: 35%;
+  height: 90%;
+  background-image: url('../img/profileImg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160%;
+  object-fit: cover;
+  border-radius: 50%;
+  animation:movement 20s alternate infinite ease-in;
+}
+.texto-descripcion{
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 10px;
+}
+.texto-descripcion > cite{
+  text-align: justify;
+  font-size: 20px;
+}
+.nombre-descripcion::after{
+  content: "Randy⚫ colorado";
+  top:0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform: rotate(-90deg);
+  color:black;
+  letter-spacing: 20px;
+  text-align: center;
+  font-weight: bold;
+}
 .cajasContenido2 {
   position: absolute;
   width: 100%;
@@ -312,7 +418,7 @@
   width: 43%;
   height: 90%;
   top: 5%;
-  border-radius: 2rem;
+  border-radius: .5rem;
   display: inline-block;
   transition: 1;
 }
@@ -566,7 +672,7 @@
   overflow: hidden;
   border-bottom: 1px solid gray;
   font-family: Hoogy;
-  background-color: rgba(255, 255, 255, 0.582);
+  background-color: rgb(255, 255, 255);
   color: rgb(91, 44, 22);
   border-radius: 0rem 0rem 0rem 0rem;
   z-index: 6;
@@ -877,6 +983,9 @@ h1 {
   }
 }
 @media (max-width: 1060px) {
+  .cabecera{
+    width: 100%;
+  }
   .contenidoMenu {
     width: 16%;
     left: 50%;
@@ -937,6 +1046,19 @@ h1 {
     background-size: 120% 100%;
   }
 }
+
+@media (max-width: 904px) {
+  .profileImg{
+    position: relative;
+    top:20%;
+    width: 30%;
+    height: 60%;
+  }
+  .cabecera > p{
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
 @media (max-width: 870px) {
   .contenedor1 {
     height: 750px;
@@ -968,6 +1090,7 @@ h1 {
   }
 }
 @media (max-width: 810px) {
+
   .imgProfileContac {
     background-size: 60%;
   }
@@ -978,7 +1101,35 @@ h1 {
     background-size: 120% 100%;
   }
   .contenedor2 {
+    flex-direction: column;
+    flex-wrap: wrap;
     height: 750px;
+  }
+  .fotoPersonal{
+    background-size: 100%;
+  }
+  .contenedores{
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+  .fotoPersonal , .--contenedor1{
+    height: 45%;
+  }
+  .nombre-descripcion, .nombre-descripcion::after{
+    height: 10%;
+    transform: rotate(0deg);
+  }
+  .profileImg{
+    width: 15%;
+    height: 100%;
+    top:0;
+  }
+  .cabecera{
+    justify-content: center;
+  }
+  .cabecera > p{
+    width: 25%;
   }
   .primaryCircle {
     width: 100%;
@@ -1048,8 +1199,24 @@ h1 {
   }
 }
 @media (max-width: 750px) {
+
+  .nombre-descripcion::after{
+    width: 100%;
+    text-align: center;
+  }
+  .--contenedor1{
+    height: 35%;
+  }
+  .fotoPersonal{
+    height: 55%;
+  }
+  .cabecera > p{
+    width: 40%;
+    letter-spacing: 5px;
+    font-weight: 500;
+  }
   .contenedor2 {
-    height: 1400px;
+    height: 800px;
   }
   .primaryCircle {
     height: 7%;
@@ -1349,7 +1516,13 @@ h1 {
     width: 45%;
   }
   .contenedor2 {
-    height: 1000px;
+    height: 800px;
+  }
+  .profileImg{
+    width: 18%;
+  }
+  .nombre-descripcion::after{
+    letter-spacing: 10px;
   }
 }
 @media (max-width: 495px) {
@@ -1389,17 +1562,44 @@ h1 {
     letter-spacing: 2px;
   }
 }
+@media (max-width: 440px) {
+  .--contenedor1 {
+    height: 35%;
+    width: 100%;
+  }
+  .texto-descripcion{
+    width: 90%;
+  }
+  .texto-descripcion>cite{
+    font-size: 15px;
+  }
+  .contenedor2{
+    height: 700px;
+  }
+  .cabecera > p{
+    width: 60%;
+  }
+  .profileImg{
+    width: 20%;
+  }
+}
 @media (max-width: 410px) {
   .navCon .textNav {
     font-size: 18px;
     letter-spacing: 2px;
     width: 50%;
   }
+  .profileImg{
+    width: 25%;
+  }
 }
 @media (max-width: 360px) {
   .primaryCircle .texto
   {
     font-size: 15px;
+  }
+  .texto-descripcion>cite{
+    font-size: 13px;
   }
 }
 @font-face {
